@@ -1,0 +1,12 @@
+.app-nav-bar {
+  padding: 10px;
+
+  .nav-link {
+    color: #495057;
+  }
+
+  .active-route {
+    background-color: #c5bf4b;
+    color: white;
+  }
+}

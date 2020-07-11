@@ -1,0 +1,9 @@
+<div class="app-nav-bar">
+  <ul ngbNav #nav="ngbNav" class="nav-tabs">
+    <li [ngbNavItem]="i" *ngFor="let element of navBarArr; let i = index">
+      <a ngbNavLink [routerLink]="element.url" [class.active-route]="activeRoute === element.id">
+        <span>{{element.title}}</span>
+      </a>
+    </li>
+  </ul>
+</div>
