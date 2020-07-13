@@ -23,8 +23,8 @@ import {Route1Component} from "./route1/route1.component";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AngularFireModule.initializeApp(environment.firebase, 'firebase-workshop'),
     AngularFirestoreModule,
+    AngularFireModule.initializeApp(environment.firebase, 'firebase-workshop'),
     HttpClientModule,
     NgbModule,
     AngularFireStorageModule
