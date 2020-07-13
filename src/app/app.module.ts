@@ -6,8 +6,8 @@ import { AppComponent } from './app.component';
 import {NavBarComponent} from "./navbar/nav-bar.component";
 import {environment} from "../environments/environment";
 import { AngularFireModule } from 'angularfire2';
-import { AngularFirestoreModule } from 'angularfire2/firestore';
-import { AngularFireStorageModule } from 'angularfire2/storage';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFireStorage } from '@angular/fire/storage';
 import {HttpClientModule} from '@angular/common/http';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {ActiveRouteService} from "./service/active-route.service";
@@ -23,11 +23,11 @@ import {Route1Component} from "./route1/route1.component";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AngularFirestoreModule,
+    AngularFirestore,
     AngularFireModule.initializeApp(environment.firebase, 'firebase-workshop'),
     HttpClientModule,
     NgbModule,
-    AngularFireStorageModule
+    AngularFireStorage
   ],
   providers: [ActiveRouteService, DataService],
   bootstrap: [AppComponent]
