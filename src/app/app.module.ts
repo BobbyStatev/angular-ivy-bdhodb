@@ -29,8 +29,8 @@ import { FirebaseService } from './service/firebase.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    AngularFirestore,
     AngularFireModule.initializeApp(environment.firebase, 'firebase-workshop'),
-    AngularFirestoreModule,
     HttpClientModule,
     NgbModule,
     AngularFireStorageModule,
