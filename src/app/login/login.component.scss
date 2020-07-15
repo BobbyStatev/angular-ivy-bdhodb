@@ -1,0 +1,24 @@
+.app-catalogue {
+  .container {
+    .card {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      height: 24rem;
+
+      .btn {
+        position: absolute;
+        bottom: 20px;
+      }
+
+      .card-img-top {
+        height: 14rem;
+      }
+
+      .card-text {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+  }
+}
