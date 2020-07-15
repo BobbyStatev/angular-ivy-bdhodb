@@ -13,7 +13,6 @@ export class FirebaseService {
 
   signup(email: string, password: string) {
     this.firebaseAuth
-      .auth
       .createUserWithEmailAndPassword(email, password)
       .then(value => {
         console.log('Success!', value);
@@ -25,7 +24,6 @@ export class FirebaseService {
 
   login(email: string, password: string) {
     this.firebaseAuth
-      .auth
       .signInWithEmailAndPassword(email, password)
       .then(value => {
         console.log('Nice, it worked!');
@@ -37,7 +35,6 @@ export class FirebaseService {
 
   logout() {
     this.firebaseAuth
-      .auth
       .signOut();
   }
 }
