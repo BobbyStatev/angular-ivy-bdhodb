@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {Constants} from "./utils/constants";
-import {Route1Component} from "./route1/route1.component";
+import {Constants} from './utils/constants';
+import {Route1Component} from './route1/route1.component';
 import {LoginComponent } from './login/login.component';
+import {AuthGuard} from './service/auth-g.service';
 
 
 const routes: Routes = [
@@ -13,12 +14,14 @@ const routes: Routes = [
   },
   {
     path: `${Constants.routes[0].url}`,
-    component: Route1Component
+    component: LoginComponent
   },
   {
     path: `${Constants.routes[1].url}`,
-    component: LoginComponent
-  }
+    component: Route1Component,
+    canActivate: [AuthGuard]
+  },
+  { path: '**', redirectTo: '' }
 ];
 
 @NgModule({

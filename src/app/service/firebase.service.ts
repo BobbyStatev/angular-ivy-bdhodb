@@ -6,9 +6,19 @@ import { Observable } from 'rxjs';
 @Injectable()
 export class FirebaseService {
   user: Observable<firebase.User>;
+  private userDetails: firebase.User = null;
 
   constructor(private firebaseAuth: AngularFireAuth) {
     this.user = firebaseAuth.authState;
+    this.user.subscribe(
+      (user) => {
+        if (user != null) {
+          this.userDetails = user;
+        } else {
+          this.userDetails = null;
+        }
+      }
+    );
   }
 
   signup(email: string, password: string) {
@@ -36,5 +46,13 @@ export class FirebaseService {
   logout() {
     this.firebaseAuth
       .signOut();
+  }
+
+  isLoggedIn() {
+    if (this.userDetails == null ) {
+      return false;
+    } else {
+      return true;
+    }
   }
 }

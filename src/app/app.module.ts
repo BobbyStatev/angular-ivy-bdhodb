@@ -18,6 +18,7 @@ import {LoginComponent} from './login/login.component';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { FormsModule } from '@angular/forms';
 import { FirebaseService } from './service/firebase.service';
+import {AuthGuard} from './service/auth-g.service';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,7 @@ import { FirebaseService } from './service/firebase.service';
     AngularFireAuthModule,
     FormsModule
   ],
-  providers: [ActiveRouteService, DataService, AngularFireRemoteConfig, FirebaseService],
+  providers: [ActiveRouteService, DataService, AngularFireRemoteConfig, FirebaseService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
