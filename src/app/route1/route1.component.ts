@@ -20,7 +20,7 @@ export class Route1Component implements OnInit, OnDestroy {
   constructor(private data: DataService,
               private activeRouteService: ActiveRouteService,
               private remoteConfig: AngularFireRemoteConfig) {
-    this.activeRouteService.setActiveRoute(Constants.routes[0].id);
+    this.activeRouteService.setActiveRoute(Constants.routes[1].id);
   }
 
   ngOnInit(): void {
